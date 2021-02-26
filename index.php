@@ -1,49 +1,44 @@
+<!-- SNACK 1: -->
 <?php
 
 $matches = [
-    "match1" => [
-        "squadraDiCasa" => "Olimpia Milano",
-        "SquadraOspite" => "Cantu",
-        "puntiSquadraDiCasa" => "60",
-        "puntiSquadraOspite" => "55"
-    ],
-    "match2" => [
-        "squadraDiCasa" => "Virtus Bologna",
-        "SquadraOspite" => "Varese",
-        "puntiSquadraDiCasa" => "75",
-        "puntiSquadraOspite" => "72"
-    ],
-    "match3" => [
-        "squadraDiCasa" => "Cremona",
-        "SquadraOspite" => "Trento",
-        "puntiSquadraDiCasa" => "58",
-        "puntiSquadraOspite" => "64"
-    ],
-    "match4" => [
-        "squadraDiCasa" => "Dinamo Sassari",
-        "SquadraOspite" => "Venezia",
-        "puntiSquadraDiCasa" => "76",
-        "puntiSquadraOspite" => "78"
-    ]
-  ];
+[
+"squadraDiCasa" => "Olimpia Milano",
+"squadraOspite" => "Dinamo Sassari",
+"puntiSquadraDiCasa" => 78,
+"puntiSquadraOspite" => 75,
+],
+[
+"squadraDiCasa" => "Virtus Entella",
+"squadraOspite" => "Cremona",
+"puntiSquadraDiCasa" => 91,
+"puntiSquadraOspite" => 83,
+],
+[
+"squadraDiCasa" => "Sassari",
+"squadraOspite" => "Perugia",
+"puntiSquadraDiCasa" => 78,
+"puntiSquadraOspite" => 84,
+]
+];
 
-  for ($i=0; $i < 1; $i++) { 
-    echo '<pre>'; print_r($matches);
-  }
+for ($i=0; $i < count($matches); $i++) { 
+    echo $matches[$i]["squadraDiCasa"] . ' - ' . $matches[$i]["squadraOspite"] 
+    . ' | ' . $matches[$i]["puntiSquadraDiCasa"] . ' - ' . $matches[$i]["puntiSquadraOspite"] . '<br/>';
+}
 
-  ?>
+echo '<br/>';
 
-/* <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+/* SNACK 2: */
 
+$name = $_GET["name"];
 
-</body>
-</html> */
+$age = $_GET["age"];
+
+$mail = $_GET['mail'];
+
+if (strlen($name) > 3  && strpos($mail, '@') !== false && strpos($mail, '.') !==false && is_numeric($age) !== false) {
+    echo "Accesso riuscito";
+} else {
+    echo "Accesso negato";
+}
